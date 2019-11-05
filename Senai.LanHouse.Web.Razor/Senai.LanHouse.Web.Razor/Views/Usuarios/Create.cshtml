@@ -1,0 +1,42 @@
+﻿@model Senai.LanHouse.Web.Razor.Dominios.Usuarios
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Login</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*//para usar c#, mensagem usuario invalido*@
+            @*viewbag somente utiliza na mesma view, ela desaparece. ja a viewdata ficava la*@
+            @if(ViewBag.Mensagem != null)
+            {
+                <div class="alert alert-danger" role="alert">
+                    @*html helpers*@
+                    @Html.Raw(ViewBag.Mensagem)
+                </div>
+            }
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Senha" class="control-label"></label>
+                <input asp-for="Senha" class="form-control" />
+                <span asp-validation-for="Senha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Entrar" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
