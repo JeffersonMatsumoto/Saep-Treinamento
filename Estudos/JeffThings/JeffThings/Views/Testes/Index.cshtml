@@ -1,0 +1,137 @@
+﻿@model IEnumerable<JeffThings.Domains.Testes>
+@*@model List<JeffThings.Domains.Testes>*@
+@using System.Linq
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DataInicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataFim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HoraInicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HoraFim)
+            </th>
+
+            <th>
+                DIFERENÇA ENTRE HORÁRIOS
+            </th>
+
+            <th>
+                DIFERENÇA ENTRE OS DIAS
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.OrderBy(aleatorio => aleatorio.DataInicio)) //OrderByDescending
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataInicio.Date)
+                    @*@Model.ToList().OrderByDescending(aleatorio => aleatorio.DataInicio)*@
+                </td>
+                <td>
+                    @*@Html.DisplayFor(modelItem => item.DataFim)*@
+                    @item.DataFim.Day@("/")@item.DataFim.Month@("/")@item.DataFim.Year
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HoraInicio)
+                </td>
+                <td>
+                    @*@Html.DisplayFor(modelItem => item.HoraFim)*@
+                    
+                    @{
+                        var a = item.HoraFim;
+                        //a.ToString(@"hh\:m");
+                    }
+                    <span>@a.ToString(@"hh\:mm")</span>
+                </td>
+
+                <td>
+                    @*@Html.DisplayFor(modelItem => item.HoraFim)*@
+                    @*@for (int i = 0; i < Model.; i++)*@
+                    @*{*@
+
+                    @*@Html.DisplayFor(model => model.OrdItems[i].Id)
+        @Html.DisplayFor(model => model.OrdItems[i].StopAddressName)*@
+
+                    @*}*@
+
+                    @*@foreach (var item in Model)
+        {
+            <span>@item.Id</span>
+        }*@
+
+                    @*@for (int i = 0; i < Model.ToList().Count; i++)*@
+                    @*{*@
+                    @*<span>@item.Id</span>*@
+                    @*<span>*@
+                    @*@Model.ToList().Count*@
+                    @*@item.HoraFim*@
+                    @*@Html.DisplayFor(modelItem => item.HoraInicio)
+                    @Html.DisplayFor(modelItem => item.HoraFim)*@
+                    @*</span>*@
+                    @*@Html.DisplayFor(model => model.OrdItems[i].StopAddressName)*@
+                    @*}*@
+                    @{
+                        var horaFim = item.HoraFim;
+                        var horaInicio = item.HoraInicio;
+
+                        <span>
+                            @horaFim.Subtract(horaInicio).ToString(@"hh\:mm\:ss")
+                            @*@item.HoraFim;
+                            @item.HoraInicio;*@
+                        </span>
+                    }
+                </td>
+
+                <td>
+                    @{
+                        var f = item.DataFim;
+                        var i = item.DataInicio;
+                        var resultado = (f - i).TotalDays + " dias";
+                        
+                        //Testes teste = new Testes();
+                        //var s = teste.HoraFim;
+                        //var d = teste.HoraInicio;
+                        //TimeSpan a = s.Subtract(d);
+                        //string total = string.Format("{0}:{1}:{2}", Convert.ToInt64(a.TotalHours), a.Minutes, a.Seconds);
+                        //var dataFim = DateTime.Now;
+                        //var dataInicio = new DateTime(2019, 11, 6, 16, 40, 00);
+                        //var diferenca = dataFim.Subtract(dataInicio);
+                        //var res = String.Format("{00}:{11}:{22}", diff.Hours,diff.Minutes,diff.Seconds);
+                        //var resultado = diferenca.ToString(@"hh\:mm\:ss");
+                        <p>
+                            @resultado
+                            @*@b.Subtract(a).ToString(@"hh\:mm\:ss")*@
+                            @*@d.OrderByDescending(teste.HoraFim => teste)*@
+                        </p>
+                    }
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

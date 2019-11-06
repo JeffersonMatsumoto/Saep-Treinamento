@@ -31,6 +31,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.TiposJogos)
             </th>
+            <th>
+                <p>
+                    TEMPO PARADO
+                 @*   Last week this time: @(DateTime.Now - TimeSpan.FromDays(7))*@
+                </p>
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -54,6 +60,23 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TiposJogos.Nome)
+            </td>
+            <td>
+                @{
+                    var dataFim = DateTime.Now;
+                    var dataInicio = new DateTime(2019, 11, 6, 16, 40, 00);
+                    var diferenca = dataFim.Subtract(dataInicio);
+                    //var res = String.Format("{00}:{11}:{22}", diff.Hours,diff.Minutes,diff.Seconds);
+                    var resultado = diferenca.ToString(@"hh\:mm\:ss");
+                    //DateTime a = new DateTime(2019, 11, 6, 16, 40, 00);
+                    //var a = new DateTime().Now;
+                    //DateTime b = new DateTime(2019, 11, 6, 17, 50, 00);
+                    //DateTime resultado = b.Subtract(a);
+                    <p>
+                        @*@b.Subtract(a).ToString(@"hh\:mm\:ss")*@
+                        @resultado
+                    </p>  
+                }
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

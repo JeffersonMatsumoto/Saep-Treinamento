@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ccgm1\\Documents\\Jefferson\\CURSO\\SAEP\\Code\\JeffThings\\JeffThings\\JeffThings.csproj": {}
+    "C:\\Users\\ccgm1\\Documents\\Jefferson\\CURSO\\SAEP\\Code\\Saep-Treinamento\\Estudos\\JeffThings\\JeffThings\\JeffThings.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ccgm1\\Documents\\Jefferson\\CURSO\\SAEP\\Code\\JeffThings\\JeffThings\\JeffThings.csproj": {
+    "C:\\Users\\ccgm1\\Documents\\Jefferson\\CURSO\\SAEP\\Code\\Saep-Treinamento\\Estudos\\JeffThings\\JeffThings\\JeffThings.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ccgm1\\Documents\\Jefferson\\CURSO\\SAEP\\Code\\JeffThings\\JeffThings\\JeffThings.csproj",
+        "projectUniqueName": "C:\\Users\\ccgm1\\Documents\\Jefferson\\CURSO\\SAEP\\Code\\Saep-Treinamento\\Estudos\\JeffThings\\JeffThings\\JeffThings.csproj",
         "projectName": "JeffThings",
-        "projectPath": "C:\\Users\\ccgm1\\Documents\\Jefferson\\CURSO\\SAEP\\Code\\JeffThings\\JeffThings\\JeffThings.csproj",
+        "projectPath": "C:\\Users\\ccgm1\\Documents\\Jefferson\\CURSO\\SAEP\\Code\\Saep-Treinamento\\Estudos\\JeffThings\\JeffThings\\JeffThings.csproj",
         "packagesPath": "C:\\Users\\ccgm1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ccgm1\\Documents\\Jefferson\\CURSO\\SAEP\\Code\\JeffThings\\JeffThings\\obj\\",
+        "outputPath": "C:\\Users\\ccgm1\\Documents\\Jefferson\\CURSO\\SAEP\\Code\\Saep-Treinamento\\Estudos\\JeffThings\\JeffThings\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

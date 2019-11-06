@@ -153,6 +153,27 @@ namespace JeffThings.Contexts
                     .HasMaxLength(250)
                     .IsUnicode(false);
             });
+
+            modelBuilder.Entity<Testes>(entity =>
+            {
+                entity.ToTable("TESTES");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.DataFim)
+                    .HasColumnName("DATA_FIM")
+                    .HasColumnType("date");
+
+                entity.Property(e => e.DataInicio)
+                    .HasColumnName("DATA_INICIO")
+                    .HasColumnType("date");
+
+                entity.Property(e => e.HoraFim).HasColumnName("HORA_FIM");
+
+                entity.Property(e => e.HoraInicio).HasColumnName("HORA_INICIO");
+            });
         }
+
+        public DbSet<JeffThings.Domains.Testes> Testes { get; set; }
     }
 }
