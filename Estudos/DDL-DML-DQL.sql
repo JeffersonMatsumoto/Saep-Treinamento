@@ -49,6 +49,14 @@ CREATE TABLE JOGOS (
 )
 --ALTER TABLE JOGOS DROP COLUMN PLATAFORMAS_ID
 
+CREATE TABLE TESTES (
+	ID INT IDENTITY PRIMARY KEY
+	, HORA_INICIO TIME 
+	, HORA_FIM TIME
+	, DATA_INICIO DATE
+	, DATA FIM DATE
+)
+
 --DML------------------------------------------------------------------------------------------------------------------------------------
 
 BULK INSERT USUARIOS

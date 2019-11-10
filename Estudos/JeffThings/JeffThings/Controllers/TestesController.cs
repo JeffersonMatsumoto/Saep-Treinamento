@@ -58,9 +58,18 @@ namespace JeffThings.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(testes);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                if(testes.DataInicio >= DateTime.Today && testes.DataFim >= DateTime.Today )
+                {
+                    if (!testes.HoraInicio.ToString().Contains(":"))
+                    { 
+                        _context.Add(testes);
+                        await _context.SaveChangesAsync();
+                        return RedirectToAction(nameof(Index));
+                    }
+                    ViewBag.ErroTesteHora = "Horário inserido inválido";
+                    ViewData["hora"] = "invaliadda ghirario";
+                }
+                ViewBag.ErroTesteData = "Data inserida inválida";
             }
             return View(testes);
         }
